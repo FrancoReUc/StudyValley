@@ -8,7 +8,17 @@ export default {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    container: {
+      center: true,
+      padding: "2rem",
+      screens: {
+        "2xl": "1400px",
+      },
+    },
   	extend: {
+      fontFamily: {
+        sans: ["var(--font-geist-sans)", "system-ui", "sans-serif"],
+      },
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
@@ -82,11 +92,17 @@ export default {
   				to: {
   					height: '0'
   				}
-  			}
+  			},
+         'bubble-rise': {
+            '0%': { transform: 'translateY(0) scale(0.5)', opacity: '0' },
+            '50%': { opacity: '0.7' },
+            '100%': { transform: 'translateY(-100px) scale(1.2)', opacity: '0' },
+          },
   		},
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
-  			'accordion-up': 'accordion-up 0.2s ease-out'
+  			'accordion-up': 'accordion-up 0.2s ease-out',
+        'bubble-rise': 'bubble-rise 2s ease-in-out infinite',
   		}
   	}
   },
